@@ -1,0 +1,732 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Black Simple Lamp",
+      "description": "Minimal Stand is made of by natural wood. The design that is very simple and minimal. This is truly one of the best furnitures in any family for now.",
+      "price": 12,
+      "category": "lamp",
+      "image": "lamp",
+      "rating": 4.5,
+      "reviewCount": 50,
+      "inStock": true,
+      "colors": [
+        "gray",
+        "brown",
+        "beige"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Minimal Stand",
+      "description": "Minimal Stand is made of by natural wood. The design that is very simple and minimal. This is truly one of the best furnitures in any family for now. With 3 different colors, you can easily select the best match for your home.",
+      "price": 25,
+      "category": "Table",
+      "image": "stand",
+      "rating": 4.5,
+      "reviewCount": 50,
+      "inStock": true,
+      "colors": [
+        "gray",
+        "brown",
+        "beige"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Coffee Chair",
+      "description": "Coffee Chair is made of natural wood. The design that is very simple and minimal. This is truly one of the best furnitures in any family for now.",
+      "price": 20,
+      "category": "chair",
+      "image": "chair",
+      "rating": 4.7,
+      "reviewCount": 45,
+      "inStock": true,
+      "colors": [
+        "gray",
+        "brown",
+        "beige"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Simple Desk",
+      "description": "Simple Desk is made of natural wood. The design that is very simple and minimal. This is truly one of the best furnitures in any family for now.",
+      "price": 50,
+      "category": "Armchair",
+      "image": "desk",
+      "rating": 4.6,
+      "reviewCount": 38,
+      "inStock": true,
+      "colors": [
+        "gray",
+        "brown",
+        "beige"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Popular",
+      "icon": "ic_star"
+    },
+    {
+      "id": "2",
+      "name": "Chair",
+      "icon": "ic_chair"
+    },
+    {
+      "id": "3",
+      "name": "Table",
+      "icon": "ic_table"
+    },
+    {
+      "id": "4",
+      "name": "Armchair",
+      "icon": "ic_armchair"
+    },
+    {
+      "id": "5",
+      "name": "Bed",
+      "icon": "ic_bed"
+    },
+    {
+      "id": "6",
+      "name": "Lamp",
+      "icon": "ic_lamp"
+    }
+  ],
+  "cart": [
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "0696"
+    },
+    {
+      "id": "0",
+      "productId": 2,
+      "quantity": 1,
+      "userId": "0696"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "f958"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "f958"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "91f4"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "91f4"
+    },
+    {
+      "id": "0",
+      "productId": 4,
+      "quantity": 1,
+      "userId": "3961"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "3961"
+    },
+    {
+      "id": "0",
+      "productId": 2,
+      "quantity": 1,
+      "userId": "3961"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "productId": 2,
+      "quantity": 1,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "productId": 4,
+      "quantity": 1,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "productId": 3,
+      "quantity": 1,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "productId": 2,
+      "quantity": 1,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "productId": 3,
+      "quantity": 1,
+      "userId": "0696"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "0696"
+    },
+    {
+      "id": "0",
+      "productId": 1,
+      "quantity": 1,
+      "userId": "0696"
+    },
+    {
+      "id": 0,
+      "productId": 1,
+      "quantity": 1,
+      "userId": "0696"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": ""
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "f958"
+    },
+    {
+      "id": "2",
+      "imageRes": 2130968631,
+      "name": "Minimal Stand",
+      "price": 25,
+      "userId": "f958"
+    },
+    {
+      "id": "2",
+      "imageRes": 2130968631,
+      "name": "Minimal Stand",
+      "price": 25,
+      "userId": "f958"
+    },
+    {
+      "id": "3",
+      "imageRes": 2130968584,
+      "name": "Coffee Chair",
+      "price": 20,
+      "userId": "f958"
+    },
+    {
+      "id": "4",
+      "imageRes": 2130968585,
+      "name": "Simple Desk",
+      "price": 50,
+      "userId": "f958"
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "f958"
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": ""
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "f958"
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "eb53"
+    },
+    {
+      "id": "2",
+      "imageRes": 2130968631,
+      "name": "Minimal Stand",
+      "price": 25,
+      "userId": "eb53"
+    },
+    {
+      "id": "3",
+      "imageRes": 2130968584,
+      "name": "Coffee Chair",
+      "price": 20,
+      "userId": "f958"
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "f958"
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "0696"
+    },
+    {
+      "id": "3",
+      "imageRes": 2130968584,
+      "name": "Coffee Chair",
+      "price": 20,
+      "userId": "0696"
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "f958"
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "f958"
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "4c31"
+    },
+    {
+      "id": "1",
+      "imageRes": 2130968613,
+      "name": "Black Simple Lamp",
+      "price": 12,
+      "userId": "91f4"
+    },
+    {
+      "id": "2",
+      "imageRes": 2130968631,
+      "name": "Minimal Stand",
+      "price": 25,
+      "userId": "3961"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Bruno Pham",
+      "email": "bruno203@gmail.com",
+      "password": "password123"
+    },
+    {
+      "id": "",
+      "email": "tuan@gmail.com",
+      "name": "Tuan",
+      "password": "12345"
+    },
+    {
+      "id": "24be",
+      "email": "tuan1@gmail.com",
+      "name": "Tuan",
+      "password": "123"
+    },
+    {
+      "id": "f958",
+      "email": "tuan3@gmail.com",
+      "name": "tuan",
+      "password": "123"
+    },
+    {
+      "id": "eb53",
+      "email": "tuan4@gmail.com",
+      "name": "Tuan",
+      "password": "123"
+    },
+    {
+      "id": "0696",
+      "email": "admin@gmail.com",
+      "name": "admin",
+      "password": "123"
+    },
+    {
+      "id": "4c31",
+      "email": "tuanbeodayy@gmail.com",
+      "name": "Lê Văn Tuấn",
+      "password": "tuanle22"
+    },
+    {
+      "id": "3961",
+      "email": "tuandemo@gmail.com",
+      "name": "@(#(₫",
+      "password": "1"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": "1",
+      "orderNumber": "238562312",
+      "date": "20/03/2020",
+      "status": "Delivered",
+      "totalAmount": 150,
+      "items": [
+        {
+          "productId": 1,
+          "quantity": 1,
+          "price": 50
+        },
+        {
+          "productId": 2,
+          "quantity": 2,
+          "price": 50
+        }
+      ]
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 4
+        }
+      ],
+      "orderNumber": "18a7f8fe",
+      "status": "Processing",
+      "totalAmount": 53,
+      "userId": "0696"
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 3
+        }
+      ],
+      "orderNumber": "2a14b7ca",
+      "status": "Processing",
+      "totalAmount": 41,
+      "userId": "0696"
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 1
+        }
+      ],
+      "orderNumber": "9b73ecd3",
+      "status": "Processing",
+      "totalAmount": 17,
+      "userId": "f958"
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 1
+        }
+      ],
+      "orderNumber": "9a4793d4",
+      "status": "Processing",
+      "totalAmount": 29,
+      "userId": "91f4"
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 50,
+          "productId": 4,
+          "quantity": 1
+        }
+      ],
+      "orderNumber": "71b70b29",
+      "status": "Processing",
+      "totalAmount": 55,
+      "userId": "3961"
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 1
+        }
+      ],
+      "orderNumber": "978cff3b",
+      "status": "Processing",
+      "totalAmount": 17,
+      "userId": "3961"
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 50,
+          "productId": 4,
+          "quantity": 1
+        },
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "price": 25,
+          "productId": 2,
+          "quantity": 1
+        }
+      ],
+      "orderNumber": "2542a1e4",
+      "status": "Processing",
+      "totalAmount": 92,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "price": 25,
+          "productId": 2,
+          "quantity": 1
+        },
+        {
+          "price": 50,
+          "productId": 4,
+          "quantity": 1
+        },
+        {
+          "price": 20,
+          "productId": 3,
+          "quantity": 1
+        }
+      ],
+      "orderNumber": "e2f8717e",
+      "status": "Processing",
+      "totalAmount": 112,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 1
+        },
+        {
+          "price": 25,
+          "productId": 2,
+          "quantity": 1
+        }
+      ],
+      "orderNumber": "b744e3d1",
+      "status": "Processing",
+      "totalAmount": 42,
+      "userId": "4c31"
+    },
+    {
+      "id": "0",
+      "date": "11/04/2025",
+      "items": [
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 1
+        }
+      ],
+      "orderNumber": "8bf8180a",
+      "status": "Processing",
+      "totalAmount": 17,
+      "userId": "0696"
+    },
+    {
+      "id": 0,
+      "date": "12/04/2025",
+      "items": [
+        {
+          "price": 12,
+          "productId": 1,
+          "quantity": 1
+        }
+      ],
+      "orderNumber": "7e1793ff",
+      "shippingAddress": {
+        "address": "132/66 Cau Dien, Manhattan, New York, 1234, United States",
+        "id": "2",
+        "isDefault": true,
+        "name": "Le Tuan",
+        "userId": "0696"
+      },
+      "status": "Processing",
+      "totalAmount": 17,
+      "userId": "0696"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "1",
+      "productId": 2,
+      "userId": "1",
+      "rating": 5,
+      "comment": "Nice Furniture with good delivery. The delivery time is very fast. Then products look like exactly the picture in the app. Besides, color is also the same and quality is very good despite very cheap price",
+      "date": "20/03/2020"
+    }
+  ],
+  "addresses": [
+    {
+      "id": "1",
+      "userId": "1",
+      "name": "Bruno Fernandes",
+      "address": "25 rue Robert Latouche, Nice, 06200, Côte D'azur, France",
+      "isDefault": true
+    },
+    {
+      "address": "132/66 Cau Dien, Manhattan, New York, 1234, United States",
+      "id": "2",
+      "isDefault": true,
+      "name": "Le Tuan",
+      "userId": "0696"
+    },
+    {
+      "id": "3",
+      "address": "123, Queens, Houston, 456, Germany",
+      "isDefault": false,
+      "name": "Lê Tuấn",
+      "userId": "0696"
+    },
+    {
+      "id": "4",
+      "address": "123, Brooklyn, Houston, Japan",
+      "isDefault": false,
+      "name": "Demo",
+      "userId": "0696"
+    },
+    {
+      "id": "1",
+      "address": "12394+3, Brooklyn, Houston, wusjs, Japan",
+      "isDefault": false,
+      "name": "Tuấn 2",
+      "userId": "0696"
+    },
+    {
+      "id": "1",
+      "address": "ccff, Queens, Los Angeles, ccc, Japan",
+      "isDefault": false,
+      "name": "ffg",
+      "userId": "0696"
+    },
+    {
+      "address": "d, Manhattan, New York, d, Japan",
+      "id": "36b2",
+      "isDefault": false,
+      "name": "d",
+      "userId": "0696"
+    },
+    {
+      "address": "sjsjjs, Manhattan, Houston, jJsh, Canada",
+      "id": "aa02",
+      "isDefault": false,
+      "name": "qhahsh",
+      "userId": "0696"
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": "1",
+      "userId": "1",
+      "type": "MASTERCARD",
+      "cardNumber": "************3947",
+      "isDefault": true
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "userId": "1",
+      "title": "Your order #123456789 has been confirmed",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis pretium et in arcu adipiscing nec.",
+      "date": "20/03/2020",
+      "isRead": false,
+      "type": "order",
+      "imageUrl": "noti1"
+    }
+  ]
+}
