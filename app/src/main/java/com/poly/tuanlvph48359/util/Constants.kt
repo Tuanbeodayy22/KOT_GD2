@@ -4,7 +4,7 @@ object Constants {
     // API base URL - thay đổi tùy theo cài đặt của bạn
     // Cho Android Emulator, sử dụng 10.0.2.2 để truy cập localhost
     // Cho thiết bị thực, sử dụng địa chỉ IP của máy tính
-    const val API_BASE_URL = "http://192.168.5.215:3000/"
+    const val API_BASE_URL = "http://10.24.43.68:3000/"
 
     // ID người dùng cho test (trong ứng dụng thực, bạn sẽ lấy từ đăng nhập)
     const val TEST_USER_ID = "1"

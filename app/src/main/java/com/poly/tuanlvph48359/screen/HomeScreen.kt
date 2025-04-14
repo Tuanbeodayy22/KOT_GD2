@@ -2,6 +2,8 @@ package com.poly.tuanlvph48359.screen
 
 import android.util.Log
 import android.widget.Toast
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -328,24 +330,36 @@ fun ApiProductItem(
         )
     }
 }
+// Tìm hàm CategoriesSection trong HomeScreen.kt
 @Composable
 fun CategoriesSection(
     categories: List<String>,
     selectedCategory: String,
     onCategorySelected: (String) -> Unit
 ) {
-    Row(
+    Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 16.dp),
-        horizontalArrangement = Arrangement.SpaceEvenly
+            // Đặt chiều rộng tối đa để chỉ hiển thị đến "Bed"
+            .height(IntrinsicSize.Min)
     ) {
-        categories.forEach { category ->
-            CategoryItem(
-                category = category,
-                isSelected = category == selectedCategory,
-                onCategorySelected = onCategorySelected
-            )
+        Row(
+            modifier = Modifier
+                .horizontalScroll(rememberScrollState())
+                .padding(vertical = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Spacer(modifier = Modifier.width(16.dp))
+
+            categories.forEach { category ->
+                CategoryItem(
+                    category = category,
+                    isSelected = category == selectedCategory,
+                    onCategorySelected = onCategorySelected
+                )
+            }
+
+            Spacer(modifier = Modifier.width(16.dp))
         }
     }
 }

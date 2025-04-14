@@ -170,6 +170,7 @@ class CartViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     // Tăng số lượng
+    // Tăng số lượng
     fun increaseQuantity(id: Int) {
         val userId = userPreferences.getUserId()
         val index = _cartItems.indexOfFirst { it.id == id }
@@ -177,34 +178,55 @@ class CartViewModel(application: Application) : AndroidViewModel(application) {
         if (index != -1) {
             val item = _cartItems[index]
             val newQuantity = item.quantity + 1
+            val originalItem = item.copy() // Lưu lại item gốc để khôi phục nếu cần
+
+            // Cập nhật UI trước để giao diện phản hồi ngay lập tức
+            _cartItems[index] = item.copy(quantity = newQuantity)
 
             if (userId.isNotEmpty()) {
                 // Cập nhật trên server
                 viewModelScope.launch {
                     try {
-                        val cartItemResponse = CartItemResponse(
-                            id = id,
-                            userId = userId,
-                            productId = id,
-                            quantity = newQuantity
-                        )
+                        // Tìm cartItemId thực tế dựa trên userId và productId
+                        val cartResponse = apiService.getCartItems(userId)
+                        if (cartResponse.isSuccessful) {
+                            val cartItems = cartResponse.body()
+                            val cartItem = cartItems?.find { it.productId == id && it.userId == userId }
 
-                        val response = apiService.updateCartItem(id, cartItemResponse)
-                        if (response.isSuccessful) {
-                            // Cập nhật UI
-                            _cartItems[index] = item.copy(quantity = newQuantity)
+                            if (cartItem != null) {
+                                // Sử dụng ID của cart item, không phải product ID
+                                val cartItemResponse = CartItemResponse(
+                                    id = cartItem.id,       // ID của mục giỏ hàng
+                                    userId = userId,
+                                    productId = id,         // ID của sản phẩm
+                                    quantity = newQuantity
+                                )
+
+                                // Đảm bảo gọi API với cartItem.id, không phải product id
+                                val response = apiService.updateCartItem(cartItem.id, cartItemResponse)
+                                if (!response.isSuccessful) {
+                                    // Nếu cập nhật server thất bại, đặt lại UI
+                                    _cartItems[index] = originalItem
+                                    _error.value = "Không thể cập nhật số lượng: ${response.code()}"
+                                }
+                            } else {
+                                // Không tìm thấy mục giỏ hàng trên server
+                                _error.value = "Không tìm thấy sản phẩm trong giỏ hàng"
+                                // Khôi phục UI
+                                _cartItems[index] = originalItem
+                            }
                         } else {
-                            _error.value = "Không thể cập nhật số lượng"
+                            // Không thể lấy danh sách giỏ hàng
+                            _error.value = "Không thể tải giỏ hàng: ${cartResponse.code()}"
+                            // Khôi phục UI
+                            _cartItems[index] = originalItem
                         }
                     } catch (e: Exception) {
                         _error.value = "Lỗi: ${e.message}"
-                        // Cập nhật UI trong trường hợp lỗi
-                        _cartItems[index] = item.copy(quantity = newQuantity)
+                        // Khôi phục UI
+                        _cartItems[index] = originalItem
                     }
                 }
-            } else {
-                // Cập nhật trực tiếp trong bộ nhớ
-                _cartItems[index] = item.copy(quantity = newQuantity)
             }
         }
     }
@@ -218,39 +240,59 @@ class CartViewModel(application: Application) : AndroidViewModel(application) {
             val item = _cartItems[index]
             if (item.quantity > 1) {
                 val newQuantity = item.quantity - 1
+                val originalItem = item.copy() // Lưu lại item gốc để khôi phục nếu cần
+
+                // Cập nhật UI trước để giao diện phản hồi ngay lập tức
+                _cartItems[index] = item.copy(quantity = newQuantity)
 
                 if (userId.isNotEmpty()) {
                     // Cập nhật trên server
                     viewModelScope.launch {
                         try {
-                            val cartItemResponse = CartItemResponse(
-                                id = id,
-                                userId = userId,
-                                productId = id,
-                                quantity = newQuantity
-                            )
+                            // Tìm cartItemId thực tế dựa trên userId và productId
+                            val cartResponse = apiService.getCartItems(userId)
+                            if (cartResponse.isSuccessful) {
+                                val cartItems = cartResponse.body()
+                                val cartItem = cartItems?.find { it.productId == id && it.userId == userId }
 
-                            val response = apiService.updateCartItem(id, cartItemResponse)
-                            if (response.isSuccessful) {
-                                // Cập nhật UI
-                                _cartItems[index] = item.copy(quantity = newQuantity)
+                                if (cartItem != null) {
+                                    // Sử dụng ID của cart item, không phải product ID
+                                    val cartItemResponse = CartItemResponse(
+                                        id = cartItem.id,       // ID của mục giỏ hàng
+                                        userId = userId,
+                                        productId = id,         // ID của sản phẩm
+                                        quantity = newQuantity
+                                    )
+
+                                    // Đảm bảo gọi API với cartItem.id, không phải product id
+                                    val response = apiService.updateCartItem(cartItem.id, cartItemResponse)
+                                    if (!response.isSuccessful) {
+                                        // Nếu cập nhật server thất bại, đặt lại UI
+                                        _cartItems[index] = originalItem
+                                        _error.value = "Không thể cập nhật số lượng: ${response.code()}"
+                                    }
+                                } else {
+                                    // Không tìm thấy mục giỏ hàng trên server
+                                    _error.value = "Không tìm thấy sản phẩm trong giỏ hàng"
+                                    // Khôi phục UI
+                                    _cartItems[index] = originalItem
+                                }
                             } else {
-                                _error.value = "Không thể cập nhật số lượng"
+                                // Không thể lấy danh sách giỏ hàng
+                                _error.value = "Không thể tải giỏ hàng: ${cartResponse.code()}"
+                                // Khôi phục UI
+                                _cartItems[index] = originalItem
                             }
                         } catch (e: Exception) {
                             _error.value = "Lỗi: ${e.message}"
-                            // Cập nhật UI trong trường hợp lỗi
-                            _cartItems[index] = item.copy(quantity = newQuantity)
+                            // Khôi phục UI
+                            _cartItems[index] = originalItem
                         }
                     }
-                } else {
-                    // Cập nhật trực tiếp trong bộ nhớ
-                    _cartItems[index] = item.copy(quantity = newQuantity)
                 }
             }
         }
     }
-
     // Xóa sản phẩm khỏi giỏ hàng
     fun removeFromCart(productId: Int) {
         val userId = userPreferences.getUserId()

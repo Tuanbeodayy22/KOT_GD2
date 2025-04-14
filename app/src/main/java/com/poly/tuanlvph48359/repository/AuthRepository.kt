@@ -15,6 +15,20 @@ import java.io.IOException
 class AuthRepository {
     private val apiService = RetrofitClient.apiService
 
+    // Kiểm tra email đã tồn tại chưa
+    private suspend fun checkEmailExists(email: String): Boolean {
+        try {
+            val response = apiService.getUsersByEmail(email)
+            if (response.isSuccessful) {
+                val users = response.body()
+                return users != null && users.isNotEmpty()
+            }
+            return false
+        } catch (e: Exception) {
+            return false
+        }
+    }
+
     // Đăng nhập người dùng
     fun loginUser(email: String, password: String): Flow<Resource<UserResponse>> = flow {
         try {
@@ -45,6 +59,13 @@ class AuthRepository {
     fun registerUser(name: String, email: String, password: String): Flow<Resource<UserResponse>> = flow {
         try {
             emit(Resource.Loading())
+
+            // Kiểm tra email đã tồn tại chưa
+            val emailExists = checkEmailExists(email)
+            if (emailExists) {
+                emit(Resource.Error("Email đã được sử dụng. Vui lòng chọn email khác."))
+                return@flow
+            }
 
             // Tạo đối tượng người dùng mới
             val newUser = UserRequest(

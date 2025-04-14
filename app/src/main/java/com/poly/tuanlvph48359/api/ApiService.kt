@@ -51,6 +51,8 @@ interface ApiService {
 
 
     // Users
+    @GET("users")
+    suspend fun getUsersByEmail(@Query("email") email: String): Response<List<UserResponse>>
     @GET("users/{id}")
     suspend fun getUserById(@Path("id") id: String): Response<UserResponse>
 
